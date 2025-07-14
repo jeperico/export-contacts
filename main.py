@@ -1,7 +1,8 @@
 import json
 import csv
+import uuid
 
-with open('test.json', 'r', encoding='utf-8') as file:
+with open('input.json', 'r', encoding='utf-8-sig') as file:
   json_data = json.load(file)
 
 with open('contact-list.csv', 'w', newline='', encoding='utf-8') as file:
@@ -23,7 +24,7 @@ with open('contact-list.csv', 'w', newline='', encoding='utf-8') as file:
       count,
       data["name"],
       '',
-      'identifier',
+      str(uuid.uuid4()),
       data["number"],
       ''
     ]
